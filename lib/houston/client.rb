@@ -70,7 +70,7 @@ module Houston
           feedback = line.unpack('N1n1H140')
           timestamp = feedback[0]
           token = feedback[2].scan(/.{0,8}/).join(' ').strip
-          devices << {token: token, timestamp: timestamp} if token && timestamp
+          devices << {:token => token, :timestamp => timestamp} if token && timestamp
         end
       end
 
